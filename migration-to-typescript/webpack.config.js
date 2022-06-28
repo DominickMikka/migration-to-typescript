@@ -15,7 +15,7 @@ const baseConfig = {
         ],
     },
     resolve: {
-        extensions: ['.js'],
+        extensions: ['.ts', '.js'],
     },
     output: {
         filename: 'index.js',
