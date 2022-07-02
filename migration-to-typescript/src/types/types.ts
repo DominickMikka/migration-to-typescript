@@ -32,3 +32,5 @@ export interface ISource {
     language: string;
     country: string;
 }
+
+export type Callback<T> = (data: T) => void;
