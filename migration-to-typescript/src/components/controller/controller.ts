@@ -1,7 +1,9 @@
 import AppLoader from './appLoader';
+import { INews, ISources } from '../../types/types';
+import { Callback } from './loader';
 
 class AppController extends AppLoader {
-    getSources(callback: Callback<string>) {
+    getSources(callback: Callback<ISources>) {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -10,7 +12,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: MouseEvent, callback: Callback<string>) {
+    getNews(e: MouseEvent, callback: Callback<INews>) {
         let target = e.target;
         const newsContainer = e.currentTarget;
 
@@ -31,11 +33,9 @@ class AppController extends AppLoader {
                 }
                 return;
             }
-            target = target?.parentNode;
+            target = (target as HTMLElement)?.parentNode;
         }
     }
-
-    
 }
 
 export default AppController;
