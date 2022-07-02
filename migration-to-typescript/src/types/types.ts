@@ -1,10 +1,10 @@
 export interface INews {
     status: string;
     totalResults: number;
-    articles: Array<IArticle>;
+    articles: Array<INew>;
 }
 
-export interface IArticle {
+export interface INew {
     source: {
         id: string;
         name: string;
