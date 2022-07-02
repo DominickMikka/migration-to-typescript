@@ -1,5 +1,10 @@
 import { Callback } from '../../types/types';
 
+enum ErrorCodes {
+    unauthorized = 401,
+    notFound = 404,
+}
+
 class Loader {
     baseLink: string;
     options: object;
@@ -20,7 +25,7 @@ class Loader {
 
     public errorHandler(res: Response): Response {
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
+            if (res.status === ErrorCodes.unauthorized || res.status === ErrorCodes.notFound)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
