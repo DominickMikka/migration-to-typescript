@@ -1,25 +1,22 @@
 import './sources.css';
 
-type newsObject = {
-    id: string;
-    name: string;
-};
+import { IArticle } from '../../../types/types';
 
 class Sources {
-    draw(data: Array<newsObject>): void {
-        const fragment: DocumentFragment = document.createDocumentFragment();
-        const sourceItemTemp: HTMLTemplateElement = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
+    draw(data: Array<IArticle>): void {
+        const fragment = document.createDocumentFragment();
+        const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
-        data.forEach((item: newsObject) => {
-            const sourceClone: HTMLTemplateElement = sourceItemTemp.content.cloneNode(true) as HTMLTemplateElement;
+        data.forEach((item) => {
+            const sourceClone = sourceItemTemp.content.cloneNode(true) as HTMLElement;
 
-            (sourceClone.querySelector('.source__item-name') as HTMLTemplateElement).textContent = item.name;
-            (sourceClone.querySelector('.source__item') as HTMLTemplateElement).setAttribute('data-source-id', item.id);
+            (sourceClone.querySelector('.source__item-name') as HTMLElement).textContent = item.source.name;
+            (sourceClone.querySelector('.source__item') as HTMLElement).setAttribute('data-source-id', item.source.id);
 
             fragment.append(sourceClone);
         });
 
-        (document.querySelector('.sources') as HTMLTemplateElement).append(fragment);
+        (document.querySelector('.sources') as HTMLElement).append(fragment);
     }
 }
 
