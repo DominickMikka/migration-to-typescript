@@ -17,3 +17,18 @@ export interface IArticle {
     publishedAt: string;
     content: string;
 }
+
+export interface ISources {
+    status: string;
+    sources: Array<ISource>;
+}
+
+export interface ISource {
+    id: string;
+    name: string;
+    description: string;
+    url: string;
+    category: string;
+    language: string;
+    country: string;
+}
