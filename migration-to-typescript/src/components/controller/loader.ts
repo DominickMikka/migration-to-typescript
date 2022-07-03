@@ -44,7 +44,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    public load<T>(method: string, endpoint: string, callback: Callback<T>, options = {}) {
+    load<T>(method: string, endpoint: string, callback: Callback<T>, options: Partial<object> = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
