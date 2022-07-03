@@ -17,7 +17,7 @@ footer {
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 footer .copyright {
     font-size: 14px;
@@ -34,7 +34,29 @@ footer .copyright:before {
     content: '©';
 }
 
+footer a {
+    color: #ffffff;
+}
+
+@media (max-width: 1280px) {
+    main {
+        display: flex;
+    }
+
+    .sources {
+        height: auto;
+        flex-wrap: wrap;
+        max-width: 50%;
+    }
+}
+
 @media (max-width: 640px) {
+
+    main {
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+
     header h1 {
         font-size: 32px;
     }
@@ -43,6 +65,7 @@ footer .copyright:before {
         flex-wrap: wrap;
         height: 235px;
         overflow-x: hidden;
+        max-width: 100%;
     }
 
     .sources::before {
@@ -63,4 +86,9 @@ footer .copyright:before {
         background-color: #30c5ff;
         border-radius: 5px;
     }
+
+    footer {
+        flex-direction: column;
+    }
+
 }
