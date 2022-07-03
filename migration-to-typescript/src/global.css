@@ -33,3 +33,34 @@ footer .copyright a:hover {
 footer .copyright:before {
     content: '©';
 }
+
+@media (max-width: 640px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    .sources {
+        flex-wrap: wrap;
+        height: 235px;
+        overflow-x: hidden;
+    }
+
+    .sources::before {
+        content: "Select news category:";
+        margin: 0.5em;
+    }
+
+    .source__item {
+        width: 100%;
+    }
+
+    .sources::-webkit-scrollbar {
+        width: 20px;
+        background-color: #F5F5F5;
+    }
+
+    .sources::-webkit-scrollbar-thumb {
+        background-color: #30c5ff;
+        border-radius: 5px;
+    }
+}
