@@ -1,6 +1,5 @@
 import AppLoader from './appLoader';
-import { INews, ISources } from '../../types/types';
-import { Callback } from '../../types/types';
+import { INews, ISources, Callback } from '../../types/types';
 
 class AppController extends AppLoader {
     getSources(callback: Callback<ISources>): void {
